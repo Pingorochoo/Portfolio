@@ -24,6 +24,22 @@ const Hero = () => {
         </div>
       </div>
       <ComputersCanvas />
+      <div className="absolute bottom-32 xs:bottom-10 w-full flex justify-center items-center">
+        <a href="#about">
+          <div className="border-secondary w-[35px] h-[64px] rounded-3xl border-4 flex justify-center items-start p-2">
+            <motion.div
+              animate={{ y: [0, 28, 28, 0] }}
+              transition={{
+                duration: 1.5,
+                times: [0, 0.6, 0.85, 1],
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              className="w-3 h-3 rounded-full bg-secondary mb-1" //podria quitar el m-1 y parece que no cambia
+            />
+          </div>
+        </a>
+      </div>
     </section>
   );
 };

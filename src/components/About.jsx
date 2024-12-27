@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
-import SectionWrapper from "../hoc/SectionWrapper";
+import { SectionWrapper } from "../hoc";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -18,8 +18,10 @@ const ServiceCard = ({ index, title, icon }) => {
           // *eslint-disable-next-line react/no-unknown-property
           options={{ max: 45, scale: 1, speed: 450 }}
         >
-          <img src={icon} alt={title} className="w-16 h-16 object-contain"/>
-          <h3 className="text-center text-white text-[20px] font-bold">{title}</h3>
+          <img src={icon} alt={title} className="w-16 h-16 object-contain" />
+          <h3 className="text-center text-white text-[20px] font-bold">
+            {title}
+          </h3>
         </div>
       </motion.div>
     </Tilt>

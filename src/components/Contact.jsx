@@ -71,6 +71,12 @@ const Contact = () => {
           </button>
         </form>
       </motion.div>
+      <motion.div
+        variants={slideIn("right", "tween", 0.2, 1)}
+        className="h-[350px] md:h-[550px] xl:h-auto xl:flex-1 xl:max-w-[600px]"
+      >
+        <EarthCanvas />
+      </motion.div>
     </div>
   );
 };

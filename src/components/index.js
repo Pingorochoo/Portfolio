@@ -7,7 +7,6 @@ import Hero from './Hero';
 import Navbar from './Navbar';
 import Tech from './Tech';
 import Works from './Works';
-// falta agregar loader
 export {
   Hero,
   Navbar,

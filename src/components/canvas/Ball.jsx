@@ -19,7 +19,7 @@ const Ball = ({ imgUrl }) => {
         <meshStandardMaterial
           color="#fff8eb"
           polygonOffset
-          polygonOffsetFactor={-10}
+          polygonOffsetFactor={-5}
           floatShading
         />
         <Decal

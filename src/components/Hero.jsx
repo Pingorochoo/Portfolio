@@ -1,8 +1,25 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [scrollMessage, setScrollMessage] = useState(false);
+  const [scrollMessageHiden, setScrollMessageHiden] = useState("");
+  useEffect(() => {
+    const handlScroll = () => {
+      if (window.scrollY > window.visualViewport.height * 0.25)
+        setScrollMessageHiden("hide-scroll-message");
+    };
+    setTimeout(() => {
+      if (window.scrollY < window.visualViewport.height * 0.2) {
+        setScrollMessage(true);
+        setScrollMessageHiden("");
+      }
+    }, 5000);
+    window.addEventListener("scroll", handlScroll);
+    return window.addEventListener("scroll", handlScroll);
+  }, []);
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
@@ -24,7 +41,12 @@ const Hero = () => {
         </div>
       </div>
       <ComputersCanvas />
-      <div className="absolute bottom-20 xs:bottom-10 w-full flex justify-center items-center pt-14 pb-14">
+      <div className="absolute bottom-20 xs:bottom-10 w-full flex flex-col  gap-3 justify-center items-center pt-14 pb-14">
+        {scrollMessage && (
+          <p className={`text-secondary scroll-message select-none ${scrollMessageHiden}`}>
+            Keep scrolling
+          </p>
+        )}
         <a href="#about">
           <div className="border-secondary w-[35px] h-[64px] rounded-3xl border-4 flex justify-center items-start p-2">
             <motion.div

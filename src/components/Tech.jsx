@@ -41,7 +41,6 @@ const Tech = () => {
       </motion.div>
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
-          {console.log(technologies)}
           {technologies.map((tech, index) => (
             <TechsCard key={index} tech={tech} />
           ))}
